@@ -2,7 +2,7 @@ function customRender(reactElement, container){
     const domElement = document.createElement(reactElement.type);
     domElement.innerHtml = reactElement.children
     for (const prop in reactElement.props) {
-        if(prop === 'children') continue;
+        if(prop === 'children') continue
         domElement.setAttribute(prop, reactElement.props[prop]);
     }
     container.appendChild(domElement);
@@ -12,14 +12,14 @@ function customRender(reactElement, container){
 const reactElement = {
     type: 'a',
     props: {
-        href: 'http://google.com',
+        href: "http://google.com",
         target: '_blank'
     },
     children: 'Visit Google'
 }
 
 // Select the container element
-const mainContainer = document.querySelecter('#react');
+const mainContainer = document.querySelector('#root');
 
 // Render the React element into the container
 customRender(reactElement, mainContainer);
